@@ -120,5 +120,13 @@ function App() {
   )
 
 }
-
+function App2() {
+  return (
+    <div>
+      <h1>Hola, soy un botón personalizado</h1>
+      <Boton texto="Click me!" color="blue" />
+      <Boton texto="No, click me!" color="green" />
+    </div>
+  );
+}
 export default App
