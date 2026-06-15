@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import useState from 'react';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +22,25 @@ function App() {
       </header>
     </div>
   );
-}
+  
+};
+function ListaTareas() {
+    const [tareas, setTareas] = useState([]);
+    const agregarTarea = () => {
+      setTareas([...tareas, `Elemento ${tareas.length + 1}`]);
+    };
+  
 
+  return (
+    <div>
+      <h1>Lista de Tareas</h1>
+      <button onClick={agregarTarea}>Agregar Tarea</button>
+      <ul>
+        {tareas.map((tarea, index) => (
+          <li key={index}>{tarea}</li>
+        ))}
+      </ul>
+    </div>    
+  );
+}
 export default App;
